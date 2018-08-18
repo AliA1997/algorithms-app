@@ -1,28 +1,74 @@
+html, body {
+  height: 100vh;
+  width: 100vw;
+}
+#root { 
+  width: 100%;
+  height: 100%;
+}
 .App {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+}
+.App > * {
+  grid-column: 2/2;
+  width: 100%;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
   text-align: center;
+  font-size: 1.1em;
+  width: 100%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  height: 2.5em;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background: lightgray;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+input:focus {
+  background: #fff;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+select {
+  text-align: center;
+  font-size: 1.1em;
+  width: 100%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  height: 2.5em;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background: lightgray;
 }
-
-.App-title {
-  font-size: 1.5em;
+select:focus {
+  background: #fff;
 }
-
-.App-intro {
-  font-size: large;
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 5%;
+  font-size: 1.1em;
+  background: green;
+  color: #fff;
+  height: 3em;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.btn:hover {
+  background: #fff;
+  color: green;
+}
+.header {
+  text-align: center;
 }

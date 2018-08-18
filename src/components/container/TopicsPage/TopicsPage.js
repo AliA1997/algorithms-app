@@ -11,7 +11,7 @@ export default class TopicsPage extends Component {
     render() {
         return (
             <div>
-                
+                TopicsPage
             </div>
         );
     }

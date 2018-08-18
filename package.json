@@ -29,11 +29,5 @@
     "eject": "react-scripts eject"
   },
   "main": "server/",
-  "proxy": "http://localhost:10000",
-  "devDependencies": {
-    "jest": "^23.5.0"
-  },
-  "jest": {
-    "testUrl": "http://localhost:10000"
-  }
+  "proxy": "http://localhost:10000"
 }

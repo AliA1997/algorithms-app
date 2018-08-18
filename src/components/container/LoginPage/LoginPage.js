@@ -19,6 +19,10 @@ export default class LoginPage extends Component {
         console.log('Login');
     } 
     render() {
-        return this.props.children({handlePassword: this.handlePassword, handleUsername: this.handleUsername, login: this.login});
+        return (
+            <div>
+                LoginPage
+            </div>
+        );
     }
 }
