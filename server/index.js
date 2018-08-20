@@ -10,6 +10,7 @@ const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 ///import the routes 
 const userRoutes = require('./routes/user_routes');
+const thirdPartyAPIRoutes = require('./routes/third_party_routes');
 // const problemRoutes = require('./routes/problem_routes');
 
 const PORT = 10000;
@@ -39,6 +40,7 @@ app.use(session({
 
 //Use app.use to mount your routes 
 app.use('/user', userRoutes);
+app.use('/api', thirdPartyAPIRoutes);
 // app.use(problemRoutes);
 
 app.listen(PORT, () => console.log('Listening on Port 1200'))

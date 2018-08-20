@@ -32,6 +32,20 @@ const withHandlersDecorator = withHandlers({
         console.log('Hit-----------');
         handleEdu(e.target.value);
     },
+    handleCurrentProgrammingLanguage: ({handleCurrentProgrammingLanguage}) => (value) => {
+        handleCurrentProgrammingLanguage(value);
+    },
+    addToFavProgrammingLanguages: ({addToFavProgrammingLanguages}) => (e) => {
+        e.preventDefault();
+        addToFavProgrammingLanguages();
+    },
+    removeFromFavProgrammingLanguages: ({removeFromFavProgrammingLanguages}) => (e, valueToRemove) => {
+        e.preventDefault();
+        removeFromFavProgrammingLanguages(valueToRemove);
+    },
+    upload: ({handleUpload}) => (e) => {
+        handleUpload(e.target.files[0]);
+    },
     onClick: ({register, history}) => () => {
         register();
         history.push('/');

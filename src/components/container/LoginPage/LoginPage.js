@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+//imoprt your components
+import Login from '../../presentational/Login/Login';
 import axios from 'axios';
 
 export default class LoginPage extends Component {
@@ -19,10 +21,6 @@ export default class LoginPage extends Component {
         console.log('Login');
     } 
     render() {
-        return (
-            <div>
-                LoginPage
-            </div>
-        );
+        return (<Login />);
     }
 }

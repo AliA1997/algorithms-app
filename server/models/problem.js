@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const problem = new Schema({
     issue: String,
     topic: String,
-    comments: [{username: String, body: String, likes: Number}]
+    comments: [{id: String, username: String, body: String, likes: Number}]
 });
 
 //export the defined schema as the model.

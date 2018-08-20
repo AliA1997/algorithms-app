@@ -6,10 +6,12 @@ const Schema = mongoose.Schema;
 const user = new Schema({
     name: String,
     username: {type: String, unique: true},
+    profile_picture: String,
     password: String,
     email: {type: String, unique: true, lowercase: true},
     phone_number: Number,
     experience:  String,
+    favorite_programming_languages: [{name: String,  image: String}],
     recent_edu_completed: String
 });
 

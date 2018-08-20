@@ -20,7 +20,8 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "^1.1.4",
     "recompose": "^0.28.2",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,5 +30,8 @@
     "eject": "react-scripts eject"
   },
   "main": "server/",
-  "proxy": "http://localhost:10000"
+  "proxy": "http://localhost:10000",
+  "devDependencies": {
+    "react-test-renderer": "^16.4.2"
+  }
 }

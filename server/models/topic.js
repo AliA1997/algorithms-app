@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 ///Topic model is gonna have a name, 
-const topic = Schema({
+const topic = new Schema({
     name: {type: String, unique: true}, 
-    tags: 
+    // tags: 
 })
 
 

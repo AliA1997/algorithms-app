@@ -1,6 +1,6 @@
-.user-form-wrapper {
+.form-wrapper {
     display: grid;
-    grid-template-rows: 30% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 10% 20% 10% 10% 10% 10% 10% 10% 10%;
     width: 100%;
     min-height: 100%;
 }
@@ -9,11 +9,49 @@
     height: 100%;
     grid-row: auto;
 }
-
+.form-wrapper > *:nth-child(2) {
+    margin-left: auto;
+    margin-right: auto;
+    background: red;
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+}
 
 .form-label {
     font-size: 1.2em;
     font-weight: 700;
     text-align: center;
     display: block;
+}
+
+.favorite-programming-languages-div {
+    width: 100%;
+    height: 80%;
+    display: grid;
+}
+.programming-language-card {
+    grid-row: auto;
+    display: flex;
+    border: solid 2px #000;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 2.5%;
+}
+.programming-language-card > img {
+    border-radius: 50%;
+    width: 50%;
+}
+.programming-language-card > img[src] {
+    height: 90%;
+    padding: 10px;
+}
+.programming-language-card > p {
+    font-size: 1.5em;
+    font-weight: 700;
 }

@@ -19,7 +19,8 @@ module.exports = {
         })
     },
     register: (req, res) => {
-        const { username, name, password, email, phone_number, experience, recent_edu_completed } = req.body;
+        const { username, name, password, profile_picture, email, phone_number, experience, recent_edu_completed, 
+            favorite_programming_languages } = req.body;
         console.log(req.body);
         console.log('register------------');
         bcrypt.hash(password, saltRounds).then(hashedPassword => {
@@ -28,10 +29,12 @@ module.exports = {
                 username, 
                 name, 
                 password: hashedPassword, 
+                profile_picture,
                 email,
                 phone_number: +phone_number,
                 experience,
-                recent_edu_completed
+                recent_edu_completed,
+                favorite_programming_languages
             });
             //Save the new User to the database.
             newUser.save();
