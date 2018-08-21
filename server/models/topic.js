@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 ///Topic model is gonna have a name, 
 const topic = new Schema({
     name: {type: String, unique: true}, 
-    // tags: 
+    image: String,
+    category: String
 })
 
 

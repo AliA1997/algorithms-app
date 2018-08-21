@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 //Define your problem model.
 const problem = new Schema({
     issue: String,
-    topic: String,
+    topic: {type: String, ref: 'Topic'},
     comments: [{id: String, username: String, body: String, likes: Number}]
 });
 

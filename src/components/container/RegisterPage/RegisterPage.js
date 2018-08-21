@@ -4,10 +4,10 @@ import UserForm from '../../presentational/UserForm/UserForm';
 import programmingLanguages from '../../../data/programmingLanguages.json';
 //import axios to register user.
 import axios from 'axios';
-//import connect to connect component to react-redux
-// import { connect } from 'react-redux';
-//import your login action responsible to logging in your user to redux state.
-// import { login } from '../../../redux/reducers/userReducer';
+// import connect to connect component to react-redux
+import { connect } from 'react-redux';
+// import your login action responsible to logging in your user to redux state.
+import { login } from '../../../redux/reducers/userReducer';
 
 
 class RegisterPage extends Component {
@@ -97,16 +97,16 @@ class RegisterPage extends Component {
     }
     register = () => {
         //Destruct the needed values from state
-        const { username, name, email, password, phone_number, experience, recent_edu_completed,
+        const { username, name, email, password, profile_picture, phone_number, experience, recent_edu_completed,
              favorite_programming_languages } = this.state;
         //Dispatch teh login action from the props passed in by mapDispatchToProps
-        // const { login } = this.props;
+        const { login } = this.props;
         //Define your newUser
-        const newUser = { username, name, email, password, phone_number, experience, recent_edu_completed,
+        const newUser = { username, name, email, password, profile_picture, phone_number, experience, recent_edu_completed,
             favorite_programming_languages };
         axios.post('/user/register', newUser)
         .then(res => {
-            // login(res.data.user);
+            login(res.data.user);
             console.log(res.data.user);
             alert(res.data.message);
         }).catch(err => console.log('Register User Error----------', err));
@@ -123,9 +123,8 @@ class RegisterPage extends Component {
 }
 
 //Now map dispatcher to props.
-// const mapDispatchToProps = {
-//     login
-// }
+const mapDispatchToProps = {
+    login
+}
 
-// export default connect(mapDispatchToProps)(RegisterPage);
-export default RegisterPage;
+export default connect(null, mapDispatchToProps)(RegisterPage);

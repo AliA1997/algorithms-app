@@ -2,6 +2,8 @@
 import React from 'react';
 //import the renderer for create a mock component with the component as a argument 
 import render from 'react-test-renderer';
+//NOTE WHEN update snapshots use --updateSnapshot
+
 import { UserForm } from './UserForm';
 
 const edu = [

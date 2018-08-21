@@ -6,7 +6,12 @@ const saltRounds = 12;
 const User = require('../models/user');
 module.exports = {
     readUserData: (req, res) => {
+        console.log('req.session.user-------', req.session.user);
         res.status(200).json({user: req.session.user});
+    },
+    logout: (req, res) => {
+        //Destroy the session
+        req.session.destroy();
     },
     login: (req, res) => {
         //Destruct the password and username from the request body
@@ -14,8 +19,26 @@ module.exports = {
         //Now find the user based on the username, then compare the password of the the found user with password from the req.body;
         User.findOne({username: username}).exec((err, userData) => {
             if(err) console.log('Login Database Error--------', err)
-            console.log('userData----------', userData);
-            // bcrypt.compare(us)
+            // console.log('userData----------', userData);
+            if(userData) {
+                bcrypt.compare(password, userData.password).then(doPasswordsMatch => {
+                    if(doPasswordsMatch) {
+                        //Delete password 
+                        delete userData.password;
+                        // console.log('PasswordsMatch-----------', userData);
+                        //Assign your session user to the userData 
+                        req.session.user = userData;
+                        //Save your session
+                        req.session.save();
+                        //Return your user to the frontend.
+                        res.status(200).json({user: req.session.user, message: "Login Successfully!"});
+                    } else {
+                    res.status(404).json({message: 'Wrong Password!'});
+                    }
+                }).catch(err => console.log('Bcrypt comparing error---------', err));
+            } else {
+                res.status(200).json({message: 'Does not recognize username!'});
+            }
         })
     },
     register: (req, res) => {
@@ -39,7 +62,7 @@ module.exports = {
             //Save the new User to the database.
             newUser.save();
             //After saving it delete it from database. 
-            delete newUser.passwordß;
+            delete newUser.password;
             //Set the session to the user. 
             req.session.user = newUser;
             //Save the session to the session database.

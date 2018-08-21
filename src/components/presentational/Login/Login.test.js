@@ -4,6 +4,8 @@ import React from 'react';
 import { Login } from './Login';
 //import the renderer from react-test-render to create a mock component.
 import render from 'react-test-renderer';
+//NOTE WHEN update snapshots use --updateSnapshot
+
 
 //Now test if the componet matches the snapshot.
 describe('Does it match the snapshot', () => {

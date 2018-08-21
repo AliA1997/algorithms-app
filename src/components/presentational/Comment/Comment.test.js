@@ -3,6 +3,7 @@ import React from 'react';
 import { Comment } from './Comment';
 //import test rendere
 import render from 'react-test-renderer';
+//NOTE WHEN update snapshots use --updateSnapshot
 
 describe('Test if it renders correctly', () => {
     // beforeAll(() => {
